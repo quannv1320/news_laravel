@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('clients.homepage');
+    $user = Auth::user();
+    return view('clients.homepage', compact('user'));
 })->name('homepage');
 
 //File manager
