@@ -162,6 +162,11 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        //file manager
+        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+
+
         //sweet alert
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
@@ -230,6 +235,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        //file manager
+        'Image' => Intervention\Image\Facades\Image::class,
+
+        //sweet alert
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
 
     ],

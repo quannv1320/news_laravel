@@ -286,23 +286,14 @@
     <script src="{{ asset('admin/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('admin/js/demo/chart-pie-demo.js') }}"></script>
 
-    {{-- file manager --}}
-    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
-    <script>
-        var options = {
-        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
-        };
-    </script>
 
-    <script>
-        CKEDITOR.replace('editor', options);
-    </script>
+    <script src="https://cdn.tiny.cloud/1/48xa0hxd3011nbpxpx1784jn23e1726gwfbnu92cgevevt2b/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
 
     {{-- sweet alert --}}
     @include('sweetalert::alert')
+
+    @yield('page-script')
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
-
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +15,16 @@ use RealRashid\SweetAlert\Facades\Alert;
 |
 */
 
-Route::get('/', function () {
-    $user = Auth::user();
-    return view('clients.homepage', compact('user'));
-})->name('homepage');
+Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
 
 
 Route::get('test', function () {
     alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
     return view('clients.homepage');
 });
-//File manager
-// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-//     \UniSharp\LaravelFilemanager\Lfm::routes();
-// });
+
+
+// File manager
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
