@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
+use App\Models\Article;
 
 class CategoryController extends Controller
 {
@@ -49,5 +50,13 @@ class CategoryController extends Controller
         $newCate->save();
 
         return redirect(route('cate.index'))->with('success', 'Cập nhật thành công');
+    }
+
+    //Chi tiết
+    public function detailCate($id)
+    {
+        $cateName = Category::find($id);
+        $articles = Article::where('cate_id', $id)->get();
+        return view('admin.cate.detail', compact('cateName', 'articles'));
     }
 }

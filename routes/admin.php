@@ -35,6 +35,7 @@ Route::prefix('category')
         Route::post('/add', [CategoryController::class, 'saveAdd']);
         Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('cate.edit');
         Route::post('/edit/{id}', [CategoryController::class, 'saveEdit']);
+        Route::get('/detail/{id}', [CategoryController::class, 'detailCate'])->name('cate.detail');
 
 });
 

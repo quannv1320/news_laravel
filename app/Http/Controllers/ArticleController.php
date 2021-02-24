@@ -19,7 +19,7 @@ class ArticleController extends Controller
     public function remove($id)
     {
         Article::destroy($id);
-        return redirect(route('art.index'));
+        return redirect(route('art.index'))->with('success', 'Xoá thành công');
     }
 
     public function add()

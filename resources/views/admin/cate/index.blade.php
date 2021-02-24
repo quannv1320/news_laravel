@@ -29,7 +29,7 @@
                         <td>{{ count($category->article) }}</td>
                         <td>
                             <div class="text-center">
-                                <a href="" class="btn btn-sm btn-info">Chi tết</a>
+                                <a href="{{ route('cate.detail', ['id' => $category->id]) }}" class="btn btn-sm btn-info">Chi tết</a>
                                 <a href="{{ route('cate.edit', ['id' => $category->id]) }}" class="btn btn-sm btn-primary">Sửa</a>
                                 <a href=""  data-toggle="modal" data-target="#logoutModal" class="btn btn-sm btn-danger">Xoá</a>
                             </div>
@@ -55,5 +55,5 @@
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 @endsection

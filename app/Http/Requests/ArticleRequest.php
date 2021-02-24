@@ -32,10 +32,6 @@ class ArticleRequest extends FormRequest
                 'required',
                 'min:5',
             ],
-            'cate_id' => [
-                'required',
-                'min:5',
-            ],
             'short_desc' => [
                 'required',
                 'min:5',
