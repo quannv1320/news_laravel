@@ -17,7 +17,7 @@ class CategoryController extends Controller
     public function remove($id)
     {
         Category::destroy($id);
-        return redirect(route('cate.index'));
+        return redirect(route('cate.index'))->with('success', 'Xoá thành công');
     }
 
     //Thêm mới
@@ -32,7 +32,7 @@ class CategoryController extends Controller
         $newCate->description = $request->description;
         $newCate->save();
 
-        return redirect(route('cate.index'));
+        return redirect(route('cate.index'))->with('success', 'Tạo mới thành công');
     }
 
     //Sửa
@@ -48,6 +48,6 @@ class CategoryController extends Controller
         $newCate->description = $request->description;
         $newCate->save();
 
-        return redirect(route('cate.index'));
+        return redirect(route('cate.index'))->with('success', 'Cập nhật thành công');
     }
 }

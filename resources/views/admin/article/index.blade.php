@@ -13,7 +13,7 @@
                     <th>Miêu tả ngắn</th>
                     <th>Tác giả</th>
                     <th>
-                        <div class="text-center"><a href="{{ route('art.add') }}" class="btn btn-success">Thêm mới</a></div>
+                        <div class="text-center"><a href="{{ route('art.add') }}" class="btn btn-sm btn-success">Thêm mới</a></div>
                     </th>
                 </tr>
             </thead>
@@ -30,8 +30,9 @@
                         <td>{{ $article->author }}</td>
                         <td>
                             <div class="text-center">
-                                <a href="" class="btn btn-primary">Sửa</a>
-                                <a href="{{ route('art.remove', ['id' => $article->id]) }}" class="btn btn-danger">Xoá</a>
+                                <a href="" class="btn btn-sm btn-info">Chi tiết</a>
+                                <a href="" class="btn btn-sm btn-primary">Sửa</a>
+                                <a href="{{ route('art.remove', ['id' => $article->id]) }}" class="btn btn-sm btn-danger">Xoá</a>
                             </div>
                         </td>
                     </tr>
