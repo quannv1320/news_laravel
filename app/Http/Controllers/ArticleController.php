@@ -44,4 +44,29 @@ class ArticleController extends Controller
 
         return redirect(route('art.index'));
     }
+
+    public function edit($id)
+    {   
+        // dd("ok");
+        $oldArt = Article::find($id);
+        $categories = Category::all();
+        return view('admin.article.edit', compact('oldArt', 'categories'));
+    }
+    public function saveEdit($id, ArticleRequest $request)
+    {
+        $newArt = Article::find($id);
+        $newArt->title = $request->title;
+        $newArt->cate_id = $request->cate_id;
+        $newArt->author = $request->author;
+        $newArt->short_desc = $request->short_desc;
+        $newArt->content = $request->content;
+        if($request->hasFile('image')) {
+            $fileName = uniqid().'_'.$request->image->getClientOriginalName();
+            $filePath = $request->file('image')->storeAs('uploads', $fileName, 'public');
+            $newArt->image = "storage/" . $filePath;
+        }
+        $newArt->save();
+
+        return redirect(route('art.index'));
+    }
 }

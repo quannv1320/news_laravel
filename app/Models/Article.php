@@ -14,4 +14,9 @@ class Article extends Model
     {
         return $this->belongsTo(Category::class, 'cate_id');
     }
+
+    public function artView()
+    {
+        return $this->hasOne(ArticleView::class, 'art_id');
+    }
 }

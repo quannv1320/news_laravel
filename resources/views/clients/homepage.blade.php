@@ -1,4 +1,7 @@
-<h1>Home Page</h1>
+@extends('clients.layouts.main')
+
+
+{{-- <h1>Home Page</h1>
 
 @auth
     Hello, {{ Auth::user()->name }}
@@ -16,10 +19,9 @@
 
 @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 
-{{-- {{ !! $name !! }} --}}
 
 @foreach ($articles as $article)
     <h1>{{ $article->title }}</h1>
-    <p>{{ $article->content }}</p>
+    <p>{!! $article->content !!}</p>
 @endforeach
-
+ --}}

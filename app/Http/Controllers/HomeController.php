@@ -9,8 +9,7 @@ class HomeController extends Controller
 {
     public function homepage()
     {   
-        $name = '<h1>Quân ĐẸP TRAI</h1>';
         $articles = Article::all();
-        return view('clients.homepage', compact('articles', 'name'));
+        return view('clients.homepage', compact('articles'));
     }
 }

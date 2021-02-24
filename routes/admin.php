@@ -22,7 +22,6 @@ Route::any('logout', function()
     return redirect(route('homepage'));
 })->name('logout');
 
-
 Route::get('admin', [AdminController::class, 'index'])->name('admin.index')->middleware('auth');
 
 //Quản lý danh mục
@@ -46,6 +45,9 @@ Route::prefix('article')
         Route::get('/{id}/remove', [ArticleController::class, 'remove'])->name('art.remove');
         Route::get('/add', [ArticleController::class, 'add'])->name('art.add');
         Route::post('/add', [ArticleController::class, 'saveAdd']);
+        Route::get('/edit/{id}', [ArticleController::class, 'edit'])->name('art.edit');
+        Route::post('/edit/{id}', [ArticleController::class, 'saveEdit']);
+
 });
 
 Route::prefix('user')

@@ -57,8 +57,6 @@
             </div>
           </form>
     </div>
-
-    
 @endsection
 
 @section('page-script')

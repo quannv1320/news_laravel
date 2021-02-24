@@ -17,6 +17,7 @@
                     <th>Thể loại</th>
                     <th>Miêu tả ngắn</th>
                     <th>Tác giả</th>
+                    <th>Lượt xem</th>
                     <th>
                         <div class="text-center"><a href="{{ route('art.add') }}" class="btn btn-sm btn-success">Thêm mới</a></div>
                     </th>
@@ -33,10 +34,11 @@
                         <td>{{ $article->category->name }}</td>
                         <td>{{ $article->short_desc }}</td>
                         <td>{{ $article->author }}</td>
+                        <td>{{ $article->artView->views }}</td>
                         <td>
                             <div class="text-center">
                                 <a href="" class="btn btn-sm btn-info">Chi tiết</a>
-                                <a href="" class="btn btn-sm btn-primary">Sửa</a>
+                                <a href="{{ route('art.edit', ['id' => $article->id]) }}" class="btn btn-sm btn-primary">Sửa</a>
                                 <a href=""  data-toggle="modal" data-target="#logoutModal" class="btn btn-sm btn-danger">Xoá</a>
                             </div>
                         </td>
