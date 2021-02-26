@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\ArticleView;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Support\Facades\DB;
 
@@ -41,6 +42,14 @@ class ArticleController extends Controller
             $newArt->image = "storage/" . $filePath;
         }
         $newArt->save();
+
+
+        //
+        $view = new ArticleView();
+        $view->art_id = $newArt->id;
+        $view->views = 0;
+
+        $view->save();
 
         return redirect(route('art.index'));
     }
