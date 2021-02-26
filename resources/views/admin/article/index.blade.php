@@ -34,7 +34,8 @@
                         <td>{{ $article->category->name }}</td>
                         <td>{{ $article->short_desc }}</td>
                         <td>{{ $article->author }}</td>
-                        <td>{{ $article->artView->views }}</td>
+                        <td>{{ isset($article->artView) ? $article->artView->views : "0" }}</td>
+                        {{-- <td>{{ $article->artView->views }}</td> --}}
                         <td>
                             <div class="text-center">
                                 <a href="" class="btn btn-sm btn-info">Chi tiết</a>
