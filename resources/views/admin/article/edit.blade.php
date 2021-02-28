@@ -45,13 +45,13 @@
                   </div>
                   <div class="form-group">
                     <label for="inputAddress2" class="font-weight-bold">Nội dung</label>
-                    <textarea name="content" id="editor" rows="5" class="form-control">{{ old('content', $oldArt->content) }}</textarea>
+                    <textarea name="content" id="editor" rows="10" class="form-control">{{ old('content', $oldArt->content) }}</textarea>
                     {{-- @if ($errors->has('content'))
                                 <span class="text-danger">{{ $errors->first('content')}}</span>
                     @endif --}}
                   </div>
                   <div class="">
-                    <button type="submit" class="btn btn-primary">Tạo mới</button>
+                    <button type="submit" class="btn btn-primary">Cập nhật</button>
                     <a href="{{ route('art.index') }}" class="btn btn-danger">Huỷ</a>
                   </div>
             </div>

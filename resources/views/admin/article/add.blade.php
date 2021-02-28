@@ -45,7 +45,7 @@
                   </div>
                   <div class="form-group">
                     <label for="inputAddress2" class="font-weight-bold">Nội dung</label>
-                    <textarea name="content" id="editor" rows="5" class="form-control">{{ old('content') }}</textarea>
+                    <textarea name="content" id="editor" rows="10" class="form-control">{{ old('content') }}</textarea>
                     {{-- @if ($errors->has('content'))
                                 <span class="text-danger">{{ $errors->first('content')}}</span>
                     @endif --}}

@@ -44,7 +44,7 @@ class ArticleController extends Controller
         $newArt->save();
 
 
-        //
+        //Tạo view = 0 khi tạo article
         $view = new ArticleView();
         $view->art_id = $newArt->id;
         $view->views = 0;
