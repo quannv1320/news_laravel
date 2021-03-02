@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Article;
+use App\Models\ArticleView;
 
 
 class AdminController extends Controller
@@ -13,6 +14,7 @@ class AdminController extends Controller
     {
         $categories = Category::all();
         $articles = Article::all();
+        $views = ArticleView::all();
 
         $countCate = $categories->count();
         $countArt = $articles->count();

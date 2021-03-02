@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController; ///////////////////
 use App\Http\Controllers\CategoryController; ///////////////////
 use App\Http\Controllers\ArticleController; ///////////////////
+use App\Http\Controllers\ViewController; ///////////////////
 use App\Http\Controllers\UserController; ///////////////////
 use App\Http\Controllers\AdminController; ///////////////////
 
@@ -35,7 +36,6 @@ Route::prefix('category')
         Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('cate.edit');
         Route::post('/edit/{id}', [CategoryController::class, 'saveEdit']);
         Route::get('/detail/{id}', [CategoryController::class, 'detailCate'])->name('cate.detail');
-
 });
 
 Route::prefix('article')
@@ -47,7 +47,12 @@ Route::prefix('article')
         Route::post('/add', [ArticleController::class, 'saveAdd']);
         Route::get('/edit/{id}', [ArticleController::class, 'edit'])->name('art.edit');
         Route::post('/edit/{id}', [ArticleController::class, 'saveEdit']);
+});
 
+Route::prefix('view')
+    ->middleware('auth')
+    ->group(function(){
+        Route::get('/', [ViewController::class, 'index'])->name('view.index');
 });
 
 Route::prefix('user')

@@ -16,12 +16,8 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
-
-
-Route::get('test', function () {
-    alert()->success('SuccessAlert','Lorem ipsum dolor sit amet.');
-    return view('clients.homepage');
-});
+Route::get('/articleDetail/{id}', [HomeController::class, 'articleDetail'])->name('detail');
+Route::get('/cate/{id}', [HomeController::class, 'pageCategory'])->name('page');
 
 
 // File manager

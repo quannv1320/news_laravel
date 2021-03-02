@@ -27,6 +27,9 @@
                     <div class="form-group col-md-6">
                       <label for="inputCity" class="font-weight-bold">Ảnh nổi bật</label>
                       <input type="file" class="form-control" name="image" id="exampleInputFile">
+                      @if ($errors->has('image'))
+                                <span class="text-danger">{{ $errors->first('image')}}</span>
+                      @endif
                     </div>
                     <div class="form-group col-md-6">
                       <label for="inputState" class="font-weight-bold">Tác giả</label>
@@ -39,16 +42,16 @@
                   <div class="form-group">
                     <label for="inputAddress" class="font-weight-bold">Miêu tả ngắn</label>
                     <textarea name="short_desc" rows="3" class="form-control">{{ old('short_desc') }}</textarea>
-                    {{-- @if ($errors->has('short_desc'))
+                    @if ($errors->has('short_desc'))
                                 <span class="text-danger">{{ $errors->first('short_desc')}}</span>
-                    @endif --}}
+                    @endif
                   </div>
                   <div class="form-group">
                     <label for="inputAddress2" class="font-weight-bold">Nội dung</label>
                     <textarea name="content" id="editor" rows="10" class="form-control">{{ old('content') }}</textarea>
-                    {{-- @if ($errors->has('content'))
+                    @if ($errors->has('content'))
                                 <span class="text-danger">{{ $errors->first('content')}}</span>
-                    @endif --}}
+                    @endif
                   </div>
                   <div class="">
                     <button type="submit" class="btn btn-primary">Tạo mới</button>

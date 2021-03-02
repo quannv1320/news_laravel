@@ -30,7 +30,6 @@ class ArticleRequest extends FormRequest
             ],
             'image' => [
                 'required',
-                'min:5',
             ],
             'short_desc' => [
                 'required',
@@ -52,10 +51,21 @@ class ArticleRequest extends FormRequest
     {
         return [
             'title.required'=>"Hãy nhập tiêu đề",
+            'title.min'=>"Tiêu đề lớn hơn 5 ký tự",
+
+            'image.required'=>"Hãy thêm ảnh",
+
+            'short_desc.required'=>"Hãy nhập miêu tả",
+            'short_desc.min'=>"Miêu tả phải lớn hơn 5 ký tự",
+
+            'content.required'=>"Hãy nhập nội dung",
+            'content.min'=>"Nội dung hơn 5 ký tự",
+
+            'title.required'=>"Hãy nhập tiêu đề",
             'title.min'=>"Tiêu lớn hơn 5 ký tự",
     
-            'author.required'=>"Hãy nhập mô tả",
-            'author.min'=>"Miêu tả phải lớn hơn 10 ký tự",           
+            'author.required'=>"Hãy nhập tên tác giả",
+            'author.min'=>"Tên tác giả phải lớn hơn 10 ký tự",           
         ];
     }
 }

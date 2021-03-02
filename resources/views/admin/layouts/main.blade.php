@@ -50,15 +50,8 @@
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Quản lý bài biết</span></a>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('user.index') }}">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Quản lý tài khoản</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('view.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Lượt view</span></a>
             </li>
