@@ -22,7 +22,7 @@
                             <div class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="whats-news-single mb-40 mb-40">
                                     <div class="whates-img">
-                                        <img src="{{ asset($article->image) }}" width="200">
+                                        <img src="{{ asset($article->image) }}" height="185">
                                     </div>
                                     <div class="whates-caption whates-caption2">
                                         <h4><a href="{{  route('detail',  ['id' => $article->id]) }}">{{ $article->title }}</a></h4>
@@ -48,14 +48,14 @@
         <h3>Tin HOT</h3>
     </div>
     <!-- Single -->
-    @foreach ($topArticle->slice(0, 10) as $item)
+    @foreach ($topArticles->slice(0, 10) as $item)
     <div class="most-recent-single">
         <div class="most-recent-images">
             <img src="{{ asset($item->image) }}" width="100">
         </div>
         <div class="most-recent-capt">
             <h4><a href="{{  route('detail',  ['id' => $article->id]) }}">{{ $item->title }}</a></h4>
-            <p>{{ $item->artView->views }}</p>
+            <p>Lượt xem: {{ $item->artView->views }}</p>
         </div>
     </div>
     @endforeach

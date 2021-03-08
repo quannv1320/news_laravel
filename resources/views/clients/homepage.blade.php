@@ -145,7 +145,7 @@
         </div>
         <div class="most-recent-capt">
             <h4><a href="{{  route('detail',  ['id' => $article->id]) }}">{{ $item->title }}</a></h4>
-            <p>{{ $item->artView->views }}</p>
+            <p>Lượt xem: {{ $item->artView->views }}</p>
         </div>
     </div>
     @endforeach

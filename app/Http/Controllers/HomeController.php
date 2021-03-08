@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function hotNew()
     {
         $categories = Category::all();
-        $topArticle = Article::with('artView')->get()->sortByDesc('ArticleView.views');
+        $topArticles = Article::with('artView')->get()->sortByDesc('artView.views');
     }
 
     public function articleDetail($id)
@@ -38,7 +38,7 @@ class HomeController extends Controller
         $articles = Article::all();
         $cateName = Category::find($id);
         $articleCate = Article::where('cate_id', $id)->get();
-        $topArticle = Article::with('artView')->get()->sortByDesc('ArticleView.views');
-        return view('clients.pageCate', compact('categories','cateName','articles','articleCate','topArticle'));
+        $topArticles = Article::with('artView')->get()->sortByDesc('artView.views');
+        return view('clients.pageCate', compact('categories','cateName','articles','articleCate','topArticles'));
     }
 }

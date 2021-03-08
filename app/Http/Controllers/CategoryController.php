@@ -26,6 +26,7 @@ class CategoryController extends Controller
     {
         return view('admin.cate.add');
     }
+    
     public function saveAdd(CategoryRequest $request)
     {
         $newCate = new Category();

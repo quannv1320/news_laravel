@@ -26,13 +26,14 @@
                             <div class="header-info-left">
                                 <ul>     
                                     <li class="title"><span class="flaticon-energy"></span> trending-title</li>
-                                    <li>Class property employ ancho red multi level mansion</li>
+                                    <li></li>
                                 </ul>
                             </div>
                             <div class="header-info-right">
                                 <ul class="header-date">
                                     @auth
                                        <li>Hi, {{ Auth::user()->name }}</li>
+                                       <a href="{{ route('admin.index') }}">>></a>
                                     @endauth
 
                                     @guest
@@ -116,11 +117,12 @@
                     @yield('hotNew')
                 </div>
             </div>
+
         </div>
     </section>
     <!-- Whats New End -->
     <!--   Weekly2-News start -->
-    <div class="weekly2-news-area pt-50 pb-30 gray-bg">
+    <div class="weekly2-news-area gray-bg">
         <div class="container">
             <div class="weekly2-wrapper">
                 <div class="row">
@@ -130,7 +132,12 @@
                 </div>
             </div>
         </div>
-    </div>           
+    </div>   
+    
+    {{-- Comment --}}
+    <div class="weekly pl-200 pr-200 pt-50">
+        @yield('comment')
+    </div>
     <!-- End Weekly-News -->
     <!--  Recent Articles start -->
     <div class="recent-articles pt-80 pb-80">

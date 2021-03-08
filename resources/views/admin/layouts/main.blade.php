@@ -283,6 +283,13 @@
     <script src="https://cdn.tiny.cloud/1/48xa0hxd3011nbpxpx1784jn23e1726gwfbnu92cgevevt2b/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 
+
+    <!-- Charting library -->
+    <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
+    <!-- Chartisan -->
+    <script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
+    <!-- Your application script -->
+
     {{-- sweet alert --}}
     @include('sweetalert::alert')
 

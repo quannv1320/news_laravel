@@ -9,7 +9,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="inputEmail4" class="font-weight-bold">Tiêu đề</label>
-                      <input type="text" class="form-control" name="title">
+                      <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                       @if ($errors->has('title'))
                                 <span class="text-danger">{{ $errors->first('title')}}</span>
                         @endif
